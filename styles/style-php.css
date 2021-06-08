@@ -1,0 +1,39 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color:#1E2D3B ;
+}
+body .header{
+  background-color: #2E3A46;
+  height: 70px;
+  margin-bottom: 20px;
+}
+.header i{
+    line-height: 70px;
+    font-size: 38px;
+    margin-left: 10px;
+    color: white;
+}
+.album{
+  display: flex;
+  flex-direction: column;
+  /* background: red; */
+  }
+.album .album-container{
+  background: #2E3A46;
+  text-align: center;
+  min-height: 380px;
+  margin-bottom: 10px;
+  padding:5px 10px ;
+  color: grey;
+}
+.album h4.white{
+  margin-top: 10px;
+      color: white;
+}
+.album .album-container img{
+    margin-top:10px ;
+  }
