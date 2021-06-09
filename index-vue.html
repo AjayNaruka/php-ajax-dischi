@@ -14,9 +14,31 @@
     <header>
       <div class="header">
           <i class="fab fa-spotify"></i>
-        </div>
+      </div>
+      
+
       </header>
       <div class="container">
+        <form class="d-flex">
+          <div class="flex-grow-1">
+            <input
+              class="form-control"
+              placeholder="Cerca"
+              v-model="toSearchGenre"
+              type="text">
+          </div>
+          <div>
+            <select name="filters" id="filters" class="my-select" v-model='selected' >
+              <option 
+              v-for="option in opzioni"
+              :value="option">{{capitalizeFirstLetter(option)}}</option>
+            </select>
+            <button class="ms-3 btn btn-primary" @click.prevent="apiCall(toSearchGenre,selected)" >CERCA</button> <!-- PREVENT per evitare il reload della pagina dovuto dal form -->
+            <button class="ms-3 btn btn-warning" @click.prevent="apiCall('',selected)" >RESET</button>
+            <!-- <label for="filters"></label> -->
+            
+          </div>
+        </form>
       <div class="row">
           <div 
           v-for="disco in dischi"
@@ -28,8 +50,12 @@
           <h6>{{disco.year}}</h6>
           </div>
         </div>
-          
-        
+
+      <div 
+      v-if="dischi.length==0"
+       class="no-results">
+        <h2>Nessun risultato trovato per: {{this.toSearchGenre.toUpperCase()}} in {{this.selected.toUpperCase()}}</h2>
+      </div>
       </div>
       </div>
   </div>

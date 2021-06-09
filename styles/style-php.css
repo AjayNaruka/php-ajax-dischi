@@ -37,3 +37,19 @@ body .header{
 .album .album-container img{
     margin-top:10px ;
   }
+
+  form{
+    margin-bottom: 15px ;
+  }
+    input{
+      margin-bottom: 20px;
+    }
+    .my-select{
+      vertical-align: middle;
+     padding: 7px;
+     margin-left: 10px ;
+     border-radius: 5px;
+    }
+    .no-results{
+      color: white;
+    }
